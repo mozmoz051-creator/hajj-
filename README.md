@@ -19,36 +19,37 @@ graph TD
     style A fill:#6d8e6c,stroke:#333,stroke-width:2px,color:#fff
     style F fill:#86a185,stroke:#333,stroke-width:2px,color:#fff
     style I fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+```
 erDiagram
     PILGRIM {
-        string pilgrim_id PK
+        string pilgrim_id
         string name
         string nationality
         string boundary_no
         string status
     }
     GROUP {
-        string group_id PK
+        string group_id
         string supervisor_name
         string nationality
         int total_pilgrims
     }
     ACCOMMODATION {
-        string accommodation_id PK
+        string accommodation_id
         string type_Hotel_or_Camp
         string city_or_Mashaer
         int capacity
         string gps_location
     }
     TRANSPORT {
-        string transport_id PK
+        string transport_id
         string plate_no
         string driver_name
         string driver_phone
         string route
     }
     CATERING {
-        string catering_id PK
+        string catering_id
         string meal_type
         string delivery_time
         string contractor_name
@@ -59,4 +60,3 @@ erDiagram
     PILGRIM }|--|| ACCOMMODATION : "stays_at"
     GROUP }|--|| TRANSPORT : "uses"
     ACCOMMODATION ||--|{ CATERING : "receives"
-
